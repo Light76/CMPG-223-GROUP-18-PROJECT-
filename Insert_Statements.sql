@@ -1,22 +1,9 @@
 USE AIRPORT
 GO
 
-INSERT INTO MANAGEMENT (Management_ID)
-VALUES ('MAN1')
-
-INSERT INTO MEMBER (Member_ID)
-VALUES ('MEM1')
-
-INSERT INTO PLANE(Plane_Number)
-VALUES ('PL1')
-
-INSERT INTO DESTINATION (Destination_ID)
-VALUES ('CPT')
-
-INSERT INTO FLIGHTS (Flight_Number)
-VALUES ('FNPL1')
-
-
 INSERT INTO BOOKING (Booking_Number, Member_ID, Flight_Number, Booking_Date)
 VALUES ('BK1','M01', 'FT322', 22-09-15)
+
+INSERT INTO DESTINATION (Destination_ID, Airport_Name, City_Name, Province)
+VALUES ('CPT', 'Cape Airlines', 'CapeTown', 'Western Cape')
 
