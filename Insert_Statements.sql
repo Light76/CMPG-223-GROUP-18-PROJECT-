@@ -19,3 +19,7 @@ VALUES ('FNPL1')
 INSERT INTO BOOKING (Booking_Number)
 VALUES ('BK1')
 
+
+INSERT INTO BOOKING (Member_ID, Flight_Number, Booking_Date)
+VALUES ('M01', 'FT322', 22-09-15)
+
