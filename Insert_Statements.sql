@@ -10,3 +10,5 @@ VALUES ('CPT', 'Cape Airlines', 'CapeTown', 'Western Cape')
 INSERT INTO PLANE (Plane_Number, Capacity, Airplane_Name)
 VALUES ('P1', 11, 'Fasty')
 
+INSERT INTO MANAGEMENT (Management_ID, First_Name, Last_Name, Passwords, Email, ID_Number, Role_ID)
+VALUES ('MAN1', 'Jan', 'Fourie', '1234', 'jan@gmail.com', 258963741, 'Manager')
