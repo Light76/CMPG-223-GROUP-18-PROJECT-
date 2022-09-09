@@ -35,10 +35,10 @@ CREATE TABLE DESTINATION (
 
 CREATE TABLE FLIGHTS (
     Flight_Number VARCHAR(36) PRIMARY KEY,
-    Destination_ID VARCHAR(3) FOREIGN KEY REFERENCES DESTINATION(Destination_ID),
+    Destination_ID VARCHAR(3),
     Departure_Date DATETIME,
     Departure_Time DATETIME,
-    Plane_Number VARCHAR(36) FOREIGN KEY REFERENCES PLANE(Plane_Number),
+    Plane_Number VARCHAR(36),
     Gate_Number VARCHAR(36),
     Status VARCHAR(64),
     Price SMALLMONEY
@@ -46,8 +46,8 @@ CREATE TABLE FLIGHTS (
 
 CREATE TABLE BOOKING (
     Booking_Number VARCHAR(36) PRIMARY KEY,
-    Member_ID VARCHAR(36) FOREIGN KEY REFERENCES MEMBER(Member_ID),
-    Flight_Number VARCHAR(36) FOREIGN KEY REFERENCES FLIGHTS(Flight_Number),
+    Member_ID VARCHAR(36),
+    Flight_Number VARCHAR(36),
     Booking_Date DATETIME
 
 );
