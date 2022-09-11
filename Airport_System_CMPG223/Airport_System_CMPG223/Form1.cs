@@ -28,7 +28,8 @@ namespace Airport_System_CMPG223
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
+        {   
+            //Displaying Available Flights On Form Load:
             try
             {
                 Conn.Open();
@@ -61,7 +62,8 @@ namespace Airport_System_CMPG223
 
         //Function To Update Database:
         private void UpdateDataBase()
-        {
+        {   
+            //Updating Database Based On Changes For Flights:
             try
             {
                 Conn.Open();
@@ -69,14 +71,14 @@ namespace Airport_System_CMPG223
                 Adapt = new SqlDataAdapter();
                 DS = new DataSet();
 
-                string SQL = "SELECT * FROM BOOKING";
+                string SQL = "SELECT * FROM FLIGHTS";
 
                 Comm = new SqlCommand(SQL, Conn);
                 Adapt.SelectCommand = Comm;
-                Adapt.Fill(DS, "BOOKING");
+                Adapt.Fill(DS, "FLIGHTS");
 
                 DG_View.DataSource = DS;
-                DG_View.DataMember = "BOOKING";
+                DG_View.DataMember = "FLIGHTS";
 
                 Conn.Close();
             }

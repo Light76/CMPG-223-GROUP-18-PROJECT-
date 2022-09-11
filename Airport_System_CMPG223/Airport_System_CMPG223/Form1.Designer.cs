@@ -31,8 +31,9 @@ namespace Airport_System_CMPG223
         {
             this.MakeBookings = new System.Windows.Forms.TabControl();
             this.Book = new System.Windows.Forms.TabPage();
-            this.SearchBooking = new System.Windows.Forms.TabPage();
             this.DG_View = new System.Windows.Forms.DataGridView();
+            this.SearchBooking = new System.Windows.Forms.TabPage();
+            this.Available_Fligts = new System.Windows.Forms.Label();
             this.MakeBookings.SuspendLayout();
             this.Book.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG_View)).BeginInit();
@@ -50,6 +51,7 @@ namespace Airport_System_CMPG223
             // 
             // Book
             // 
+            this.Book.Controls.Add(this.Available_Fligts);
             this.Book.Controls.Add(this.DG_View);
             this.Book.Location = new System.Drawing.Point(4, 22);
             this.Book.Name = "Book";
@@ -59,6 +61,14 @@ namespace Airport_System_CMPG223
             this.Book.Text = "tabPage1";
             this.Book.UseVisualStyleBackColor = true;
             this.Book.Click += new System.EventHandler(this.Book_Click);
+            // 
+            // DG_View
+            // 
+            this.DG_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DG_View.Location = new System.Drawing.Point(50, 415);
+            this.DG_View.Name = "DG_View";
+            this.DG_View.Size = new System.Drawing.Size(840, 425);
+            this.DG_View.TabIndex = 0;
             // 
             // SearchBooking
             // 
@@ -70,13 +80,15 @@ namespace Airport_System_CMPG223
             this.SearchBooking.Text = "tabPage2";
             this.SearchBooking.UseVisualStyleBackColor = true;
             // 
-            // DG_View
+            // Available_Fligts
             // 
-            this.DG_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DG_View.Location = new System.Drawing.Point(49, 94);
-            this.DG_View.Name = "DG_View";
-            this.DG_View.Size = new System.Drawing.Size(840, 425);
-            this.DG_View.TabIndex = 0;
+            this.Available_Fligts.AutoSize = true;
+            this.Available_Fligts.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Available_Fligts.Location = new System.Drawing.Point(54, 387);
+            this.Available_Fligts.Name = "Available_Fligts";
+            this.Available_Fligts.Size = new System.Drawing.Size(154, 25);
+            this.Available_Fligts.TabIndex = 1;
+            this.Available_Fligts.Text = "Available Flights";
             // 
             // Form1
             // 
@@ -89,6 +101,7 @@ namespace Airport_System_CMPG223
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MakeBookings.ResumeLayout(false);
             this.Book.ResumeLayout(false);
+            this.Book.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG_View)).EndInit();
             this.ResumeLayout(false);
 
@@ -100,6 +113,7 @@ namespace Airport_System_CMPG223
         private System.Windows.Forms.TabPage Book;
         private System.Windows.Forms.TabPage SearchBooking;
         private System.Windows.Forms.DataGridView DG_View;
+        private System.Windows.Forms.Label Available_Fligts;
     }
 }
 
