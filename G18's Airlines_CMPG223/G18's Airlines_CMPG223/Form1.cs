@@ -225,6 +225,9 @@ namespace G18_s_Airlines_CMPG223
             FrmBooking BookingForm = new FrmBooking();
             BookingForm.FormClosed += BookingForm_FormClosed;
             BookingForm.ShowDialog();
+
+            //Updating BOOKING table when FrmBooking Is Closed:
+            Update_Bookings();
         }
 
         //Bookings:
@@ -253,7 +256,7 @@ namespace G18_s_Airlines_CMPG223
                 Conn.Close();
 
                 Update_Bookings();
-                Update_ComboBox();
+                
                 MessageBox.Show("BOOKING Deleted");
             }
             catch (SqlException error)
