@@ -29,8 +29,9 @@ namespace G18_s_Airlines_CMPG223
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Dg_Bookings = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,7 +42,9 @@ namespace G18_s_Airlines_CMPG223
             this.Txt_BookingDate = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Btn_Booking = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.ErrProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.Dg_Bookings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,13 +57,13 @@ namespace G18_s_Airlines_CMPG223
             this.label1.TabIndex = 0;
             this.label1.Text = "Make Booking:";
             // 
-            // dataGridView1
+            // Dg_Bookings
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(730, 181);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(573, 325);
-            this.dataGridView1.TabIndex = 1;
+            this.Dg_Bookings.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dg_Bookings.Location = new System.Drawing.Point(730, 181);
+            this.Dg_Bookings.Name = "Dg_Bookings";
+            this.Dg_Bookings.Size = new System.Drawing.Size(461, 325);
+            this.Dg_Bookings.TabIndex = 1;
             // 
             // label2
             // 
@@ -109,6 +112,7 @@ namespace G18_s_Airlines_CMPG223
             this.Txt_BookingNumber.Name = "Txt_BookingNumber";
             this.Txt_BookingNumber.Size = new System.Drawing.Size(203, 26);
             this.Txt_BookingNumber.TabIndex = 6;
+            this.Txt_BookingNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Txt_MemberID
             // 
@@ -117,6 +121,7 @@ namespace G18_s_Airlines_CMPG223
             this.Txt_MemberID.Name = "Txt_MemberID";
             this.Txt_MemberID.Size = new System.Drawing.Size(203, 26);
             this.Txt_MemberID.TabIndex = 7;
+            this.Txt_MemberID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Txt_FLNumber
             // 
@@ -125,6 +130,7 @@ namespace G18_s_Airlines_CMPG223
             this.Txt_FLNumber.Name = "Txt_FLNumber";
             this.Txt_FLNumber.Size = new System.Drawing.Size(203, 26);
             this.Txt_FLNumber.TabIndex = 8;
+            this.Txt_FLNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Txt_BookingDate
             // 
@@ -133,6 +139,7 @@ namespace G18_s_Airlines_CMPG223
             this.Txt_BookingDate.Name = "Txt_BookingDate";
             this.Txt_BookingDate.Size = new System.Drawing.Size(203, 26);
             this.Txt_BookingDate.TabIndex = 9;
+            this.Txt_BookingDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -153,6 +160,11 @@ namespace G18_s_Airlines_CMPG223
             this.Btn_Booking.TabIndex = 11;
             this.Btn_Booking.Text = "Make Booking";
             this.Btn_Booking.UseVisualStyleBackColor = true;
+            this.Btn_Booking.Click += new System.EventHandler(this.Btn_Booking_Click);
+            // 
+            // ErrProvider
+            // 
+            this.ErrProvider.ContainerControl = this;
             // 
             // FrmBooking
             // 
@@ -169,11 +181,13 @@ namespace G18_s_Airlines_CMPG223
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Dg_Bookings);
             this.Controls.Add(this.label1);
             this.Name = "FrmBooking";
             this.Text = "FrmBooking";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmBooking_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Dg_Bookings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,7 +196,7 @@ namespace G18_s_Airlines_CMPG223
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Dg_Bookings;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -193,5 +207,6 @@ namespace G18_s_Airlines_CMPG223
         private System.Windows.Forms.TextBox Txt_BookingDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button Btn_Booking;
+        private System.Windows.Forms.ErrorProvider ErrProvider;
     }
 }

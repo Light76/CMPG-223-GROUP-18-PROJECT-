@@ -1,8 +1,14 @@
 ﻿//Created By : Jacques Nel - 31986595:
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 
 namespace G18_s_Airlines_CMPG223
@@ -21,7 +27,7 @@ namespace G18_s_Airlines_CMPG223
             InitializeComponent();
         }
 
-        //Function To Update DataBase:
+        //Function To Update DataBase: FOr FLIGHTS:
         private void Update_Database()
         {
             //Updating FLIGHTS Table:
@@ -48,6 +54,35 @@ namespace G18_s_Airlines_CMPG223
                 MessageBox.Show(error.Message);
             }
         }
+
+        //Function To Update DataBase: FOr Bookings:
+        private void Update_Bookings()
+        {
+            //Updating BOOKING Table:
+            try
+            {
+                Conn.Open();
+
+                Adapt = new SqlDataAdapter();
+                DS = new DataSet();
+
+                string SQL = "SELECT * FROM BOOKING";
+
+                Comm = new SqlCommand(SQL, Conn);
+                Adapt.SelectCommand = Comm;
+                Adapt.Fill(DS, "BOOKING");
+
+                DG_Bookings.DataSource = DS;
+                DG_Bookings.DataMember = "BOOKING";
+
+                Conn.Close();
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
 
         // Function To Update ComboBox:
         private void Update_ComboBox()
@@ -103,6 +138,34 @@ namespace G18_s_Airlines_CMPG223
 
             //Populating Combo_Box On Form Load:
             Update_ComboBox();
+            Update_Bookings();
+
+            //Displaying Bookings In DataGrid View On Program Load:
+            try
+            {
+                //Conn = new SqlConnection(Connstring);
+                Conn.Open();
+
+                Adapt = new SqlDataAdapter();
+                DS = new DataSet();
+
+                string SQL = "SELECT * FROM BOOKING";
+
+                Comm = new SqlCommand(SQL, Conn);
+                Adapt.SelectCommand = Comm;
+                Adapt.Fill(DS, "BOOKING");
+
+                DG_Bookings.DataSource = DS;
+                DG_Bookings.DataMember = "BOOKING";
+
+                Conn.Close();
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+            
 
         }
 
@@ -149,6 +212,49 @@ namespace G18_s_Airlines_CMPG223
                 Update_Database();
                 Update_ComboBox();
                 MessageBox.Show("Flight Deleted");
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
+        //Showing Booking Form When Button Make Booking Is Clicked:
+        private void BtnMakeBooking_Click(object sender, EventArgs e)
+        {
+            FrmBooking BookingForm = new FrmBooking();
+            BookingForm.FormClosed += BookingForm_FormClosed;
+            BookingForm.ShowDialog();
+        }
+
+        //Bookings:
+        private void BookingForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            
+        }
+
+        private void Btn_DeleteBooking_Click(object sender, EventArgs e)
+        {
+            //Deleting Bookings:
+            //Deleting Flights Based On Flight Number:
+            string ComboBox_Val = ComboBox_Flights.Text;
+
+            try
+            {
+                Conn.Open();
+
+                Adapt = new SqlDataAdapter();
+                DS = new DataSet();
+
+                string SQL_2 = $"DELETE FROM BOOKING WHERE Flight_Number = '{ComboBox_Val}'";
+                Comm = new SqlCommand(SQL_2, Conn);
+                Comm.ExecuteNonQuery();
+
+                Conn.Close();
+
+                Update_Bookings();
+                Update_ComboBox();
+                MessageBox.Show("BOOKING Deleted");
             }
             catch (SqlException error)
             {
