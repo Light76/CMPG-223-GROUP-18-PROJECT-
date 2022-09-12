@@ -117,6 +117,9 @@ namespace G18_s_Airlines_CMPG223
             FrmAddFlight ViewForm = new FrmAddFlight();
             ViewForm.FormClosed += ViewForm_FormClosed;
             ViewForm.ShowDialog();
+
+            //Updating Database on form Close:
+            Update_Database();
         }   
            
         //Updating ComboBox When New Flights Are Added:

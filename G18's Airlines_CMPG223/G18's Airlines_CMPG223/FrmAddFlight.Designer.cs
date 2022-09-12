@@ -29,6 +29,7 @@ namespace G18_s_Airlines_CMPG223
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,6 +45,9 @@ namespace G18_s_Airlines_CMPG223
             this.Txt_GateNumber = new System.Windows.Forms.TextBox();
             this.Txt_Status = new System.Windows.Forms.TextBox();
             this.Txt_Price = new System.Windows.Forms.TextBox();
+            this.Btn_InsertFlight = new System.Windows.Forms.Button();
+            this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -190,11 +194,27 @@ namespace G18_s_Airlines_CMPG223
             this.Txt_Price.TabIndex = 14;
             this.Txt_Price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // Btn_InsertFlight
+            // 
+            this.Btn_InsertFlight.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_InsertFlight.Location = new System.Drawing.Point(311, 740);
+            this.Btn_InsertFlight.Name = "Btn_InsertFlight";
+            this.Btn_InsertFlight.Size = new System.Drawing.Size(116, 60);
+            this.Btn_InsertFlight.TabIndex = 15;
+            this.Btn_InsertFlight.Text = "Add New Flight";
+            this.Btn_InsertFlight.UseVisualStyleBackColor = true;
+            this.Btn_InsertFlight.Click += new System.EventHandler(this.Btn_InsertFlight_Click);
+            // 
+            // ErrorProvider
+            // 
+            this.ErrorProvider.ContainerControl = this;
+            // 
             // FrmAddFlight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1681, 856);
+            this.Controls.Add(this.Btn_InsertFlight);
             this.Controls.Add(this.Txt_Price);
             this.Controls.Add(this.Txt_Status);
             this.Controls.Add(this.Txt_GateNumber);
@@ -212,6 +232,8 @@ namespace G18_s_Airlines_CMPG223
             this.Controls.Add(this.label1);
             this.Name = "FrmAddFlight";
             this.Text = "FrmAddFlight";
+            this.Load += new System.EventHandler(this.FrmAddFlight_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,5 +256,7 @@ namespace G18_s_Airlines_CMPG223
         private System.Windows.Forms.TextBox Txt_GateNumber;
         private System.Windows.Forms.TextBox Txt_Status;
         private System.Windows.Forms.TextBox Txt_Price;
+        private System.Windows.Forms.Button Btn_InsertFlight;
+        private System.Windows.Forms.ErrorProvider ErrorProvider;
     }
 }
