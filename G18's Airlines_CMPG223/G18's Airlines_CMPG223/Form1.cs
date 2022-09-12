@@ -148,7 +148,7 @@ namespace G18_s_Airlines_CMPG223
 
                 Update_Database();
                 Update_ComboBox();
-                MessageBox.Show("Record Deleted");
+                MessageBox.Show("Flight Deleted");
             }
             catch (SqlException error)
             {
