@@ -8,3 +8,4 @@ C:\Users\Jacques\OneDrive\Documents\NWU\2022\Second Semester\CMPG 223\GitHub\CMP
 C:\Users\Jacques\OneDrive\Documents\NWU\2022\Second Semester\CMPG 223\GitHub\CMPG-223-GROUP-18-PROJECT-\G18's Airlines_CMPG223\G18's Airlines_CMPG223\obj\Debug\G18's Airlines_CMPG223.csproj.CoreCompileInputs.cache
 C:\Users\Jacques\OneDrive\Documents\NWU\2022\Second Semester\CMPG 223\GitHub\CMPG-223-GROUP-18-PROJECT-\G18's Airlines_CMPG223\G18's Airlines_CMPG223\obj\Debug\G18's Airlines_CMPG223.exe
 C:\Users\Jacques\OneDrive\Documents\NWU\2022\Second Semester\CMPG 223\GitHub\CMPG-223-GROUP-18-PROJECT-\G18's Airlines_CMPG223\G18's Airlines_CMPG223\obj\Debug\G18's Airlines_CMPG223.pdb
+C:\Users\Jacques\OneDrive\Documents\NWU\2022\Second Semester\CMPG 223\GitHub\CMPG-223-GROUP-18-PROJECT-\G18's Airlines_CMPG223\G18's Airlines_CMPG223\obj\Debug\G18_s_Airlines_CMPG223.FrmAddFlight.resources

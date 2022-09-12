@@ -1,14 +1,8 @@
 ﻿//Created By : Jacques Nel - 31986595:
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 
 namespace G18_s_Airlines_CMPG223
@@ -58,6 +52,7 @@ namespace G18_s_Airlines_CMPG223
         // Function To Update ComboBox:
         private void Update_ComboBox()
         {
+            //Updating With Flight_Number values:
             try
             {
                 Adapt = new SqlDataAdapter();
@@ -82,7 +77,7 @@ namespace G18_s_Airlines_CMPG223
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Displaying Flights In DataGrid View:
+            //Displaying Flights In DataGrid View On Program Load:
             try
             {
                 Conn.Open();
@@ -114,6 +109,20 @@ namespace G18_s_Airlines_CMPG223
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        //Showing FrmAddFlight On Button CLick AddFlight:
+        private void Btn_AddFlights_Click(object sender, EventArgs e)
+        {
+            FrmAddFlight ViewForm = new FrmAddFlight();
+            ViewForm.FormClosed += ViewForm_FormClosed;
+            ViewForm.ShowDialog();
+        }   
+           
+        //Updating ComboBox When New Flights Are Added:
+        private void ViewForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Update_ComboBox(); 
         }
     }
 }
