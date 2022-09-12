@@ -127,5 +127,33 @@ namespace G18_s_Airlines_CMPG223
         {
             Update_ComboBox(); 
         }
+
+        private void Btn_DeleteFlights_Click(object sender, EventArgs e)
+        {
+            //Deleting Flights Based On Flight Number:
+            string ComboBox_Val = ComboBox_Flights.Text;
+
+            try
+            {
+                Conn.Open();
+
+                Adapt = new SqlDataAdapter();
+                DS = new DataSet();
+
+                string SQL_2 = $"DELETE FROM FLIGHTS WHERE Flight_Number = '{ComboBox_Val}'";
+                Comm = new SqlCommand(SQL_2, Conn);
+                Comm.ExecuteNonQuery();
+
+                Conn.Close();
+
+                Update_Database();
+                Update_ComboBox();
+                MessageBox.Show("Record Deleted");
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
     }
 }

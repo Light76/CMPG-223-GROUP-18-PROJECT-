@@ -84,6 +84,7 @@ namespace G18_s_Airlines_CMPG223
             this.Btn_DeleteFlights.TabIndex = 6;
             this.Btn_DeleteFlights.Text = "Delete Flights";
             this.Btn_DeleteFlights.UseVisualStyleBackColor = true;
+            this.Btn_DeleteFlights.Click += new System.EventHandler(this.Btn_DeleteFlights_Click);
             // 
             // Btn_AddFlights
             // 
