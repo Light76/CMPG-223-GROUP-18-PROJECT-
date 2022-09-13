@@ -162,7 +162,7 @@ namespace G18_s_Airlines_CMPG223
 
         private void MemForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            MessageBox.Show("Form loaded");
+            //MessageBox.Show("Form loaded");
         }
     }
 }

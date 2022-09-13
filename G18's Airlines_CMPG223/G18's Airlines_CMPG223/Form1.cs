@@ -298,5 +298,65 @@ namespace G18_s_Airlines_CMPG223
                 MessageBox.Show(error.Message);
             }
         }
+
+        //User Login:
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            
+
+            Adapt = new SqlDataAdapter();
+            DS = new DataSet();
+
+            string username, user_password;
+
+            username = Txt_UserName.Text;
+            user_password = Txt_Password.Text;
+
+            try
+            {
+                Conn.Open();
+                string SQL = "SELECT * FROM MANAGEMENT WHERE First_Name = '"+Txt_UserName.Text+"' AND Passwords = '"+Txt_Password.Text+"'";
+
+                Adapt = new SqlDataAdapter(SQL, Conn);
+
+                DataTable dtable = new DataTable();
+                Adapt.Fill(dtable);
+
+                if (dtable.Rows.Count > 0)
+                {
+                    username = Txt_UserName.Text;
+                    user_password = Txt_Password.Text;
+
+                    //Load FrmManagement:
+                    FrmManagement management = new FrmManagement();
+                    management.Show();
+
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Login Details");
+                    Txt_UserName.Clear();
+                    Txt_Password.Clear();
+
+                    Txt_UserName.Focus();
+                }
+
+                
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+            Conn.Close();
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            Txt_UserName.Clear();
+            Txt_Password.Clear();
+
+            Txt_UserName.Focus();
+        }
     }
 }
