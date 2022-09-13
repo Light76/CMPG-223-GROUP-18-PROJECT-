@@ -272,7 +272,7 @@ namespace G18_s_Airlines_CMPG223
         private void Btn_DeleteBooking_Click(object sender, EventArgs e)
         {
             //Deleting Bookings:
-            //Deleting Flights Based On Flight Number:
+            //Deleting Bookings Based On Booking Number:
             string ComboBox_Val = ComboBox_BookingNumber.Text;
 
             try
@@ -330,6 +330,9 @@ namespace G18_s_Airlines_CMPG223
                     //Load FrmManagement:
                     FrmManagement management = new FrmManagement();
                     management.Show();
+
+                    Txt_UserName.Clear();
+                    Txt_Password.Clear();
 
                 }
                 else
