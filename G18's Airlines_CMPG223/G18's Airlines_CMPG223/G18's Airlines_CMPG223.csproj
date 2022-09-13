@@ -64,6 +64,12 @@
     <Compile Include="FrmBooking.Designer.cs">
       <DependentUpon>FrmBooking.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMembers.Designer.cs">
+      <DependentUpon>FrmMembers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBooking.resx">
       <DependentUpon>FrmBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMembers.resx">
+      <DependentUpon>FrmMembers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

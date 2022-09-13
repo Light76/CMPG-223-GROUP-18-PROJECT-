@@ -56,6 +56,9 @@ namespace G18_s_Airlines_CMPG223
         }
 
 
+        
+
+
 
         private void FrmBooking_Load(object sender, EventArgs e)
         {
@@ -130,6 +133,8 @@ namespace G18_s_Airlines_CMPG223
                     Comm.ExecuteNonQuery();
                     Conn.Close();
                     MessageBox.Show("Booking Added");
+                    Update_Bookings();
+
                 }
                 
 

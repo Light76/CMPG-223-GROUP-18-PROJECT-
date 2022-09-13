@@ -273,7 +273,7 @@ namespace G18_s_Airlines_CMPG223
         {
             //Deleting Bookings:
             //Deleting Flights Based On Flight Number:
-            string ComboBox_Val = ComboBox_Flights.Text;
+            string ComboBox_Val = ComboBox_BookingNumber.Text;
 
             try
             {
@@ -282,7 +282,7 @@ namespace G18_s_Airlines_CMPG223
                 Adapt = new SqlDataAdapter();
                 DS = new DataSet();
 
-                string SQL_2 = $"DELETE FROM BOOKING WHERE Flight_Number = '{ComboBox_Val}'";
+                string SQL_2 = $"DELETE FROM BOOKING WHERE Booking_Number = '{ComboBox_Val}'";
                 Comm = new SqlCommand(SQL_2, Conn);
                 Comm.ExecuteNonQuery();
 
