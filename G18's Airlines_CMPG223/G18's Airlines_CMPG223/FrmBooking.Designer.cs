@@ -33,7 +33,6 @@ namespace G18_s_Airlines_CMPG223
             this.label1 = new System.Windows.Forms.Label();
             this.Dg_Bookings = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Txt_BookingNumber = new System.Windows.Forms.TextBox();
@@ -44,9 +43,9 @@ namespace G18_s_Airlines_CMPG223
             this.Btn_Booking = new System.Windows.Forms.Button();
             this.ErrProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.RB_BecomeMem = new System.Windows.Forms.RadioButton();
-            this.RB_NotMember = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
+            this.Btn_AddMember = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Dg_Bookings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrProvider)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -80,16 +79,6 @@ namespace G18_s_Airlines_CMPG223
             this.label2.TabIndex = 2;
             this.label2.Text = "Booking Number:";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(123, 418);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(172, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Member ID, If Member:";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -122,7 +111,7 @@ namespace G18_s_Airlines_CMPG223
             // Txt_MemberID
             // 
             this.Txt_MemberID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Txt_MemberID.Location = new System.Drawing.Point(6, 170);
+            this.Txt_MemberID.Location = new System.Drawing.Point(174, 196);
             this.Txt_MemberID.Name = "Txt_MemberID";
             this.Txt_MemberID.Size = new System.Drawing.Size(203, 26);
             this.Txt_MemberID.TabIndex = 7;
@@ -173,49 +162,48 @@ namespace G18_s_Airlines_CMPG223
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.Btn_AddMember);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.RB_NotMember);
-            this.groupBox1.Controls.Add(this.RB_BecomeMem);
             this.groupBox1.Controls.Add(this.Txt_MemberID);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(301, 242);
+            this.groupBox1.Location = new System.Drawing.Point(152, 243);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(347, 242);
+            this.groupBox1.Size = new System.Drawing.Size(480, 242);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Members:";
-            // 
-            // RB_BecomeMem
-            // 
-            this.RB_BecomeMem.AutoSize = true;
-            this.RB_BecomeMem.Location = new System.Drawing.Point(6, 43);
-            this.RB_BecomeMem.Name = "RB_BecomeMem";
-            this.RB_BecomeMem.Size = new System.Drawing.Size(118, 24);
-            this.RB_BecomeMem.TabIndex = 0;
-            this.RB_BecomeMem.TabStop = true;
-            this.RB_BecomeMem.Text = "Add Member";
-            this.RB_BecomeMem.UseVisualStyleBackColor = true;
-            // 
-            // RB_NotMember
-            // 
-            this.RB_NotMember.AutoSize = true;
-            this.RB_NotMember.Location = new System.Drawing.Point(6, 73);
-            this.RB_NotMember.Name = "RB_NotMember";
-            this.RB_NotMember.Size = new System.Drawing.Size(160, 24);
-            this.RB_NotMember.TabIndex = 1;
-            this.RB_NotMember.TabStop = true;
-            this.RB_NotMember.Text = "Don\'t Add Member";
-            this.RB_NotMember.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 131);
+            this.label7.Location = new System.Drawing.Point(8, 156);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(270, 20);
             this.label7.TabIndex = 13;
             this.label7.Text = "If not a member, type \"null\" in textbox";
+            // 
+            // Btn_AddMember
+            // 
+            this.Btn_AddMember.Location = new System.Drawing.Point(241, 57);
+            this.Btn_AddMember.Name = "Btn_AddMember";
+            this.Btn_AddMember.Size = new System.Drawing.Size(168, 45);
+            this.Btn_AddMember.TabIndex = 14;
+            this.Btn_AddMember.Text = "Add Member";
+            this.Btn_AddMember.UseVisualStyleBackColor = true;
+            this.Btn_AddMember.Click += new System.EventHandler(this.Btn_AddMember_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(8, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(215, 20);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Click Button To Add Member:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // FrmBooking
             // 
@@ -230,7 +218,6 @@ namespace G18_s_Airlines_CMPG223
             this.Controls.Add(this.Txt_BookingNumber);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Dg_Bookings);
             this.Controls.Add(this.label1);
@@ -251,7 +238,6 @@ namespace G18_s_Airlines_CMPG223
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView Dg_Bookings;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox Txt_BookingNumber;
@@ -263,7 +249,7 @@ namespace G18_s_Airlines_CMPG223
         private System.Windows.Forms.ErrorProvider ErrProvider;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton RB_NotMember;
-        private System.Windows.Forms.RadioButton RB_BecomeMem;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button Btn_AddMember;
     }
 }

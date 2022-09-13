@@ -56,7 +56,8 @@ namespace G18_s_Airlines_CMPG223
         }
 
 
-        
+
+
 
 
 
@@ -145,6 +146,23 @@ namespace G18_s_Airlines_CMPG223
             {
                 MessageBox.Show(error.Message);
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_AddMember_Click(object sender, EventArgs e)
+        {
+            FrmMembers MemForm = new FrmMembers();
+            MemForm.FormClosed += MemForm_FormClosed;
+            MemForm.ShowDialog();
+        }
+
+        private void MemForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MessageBox.Show("Form loaded");
         }
     }
 }

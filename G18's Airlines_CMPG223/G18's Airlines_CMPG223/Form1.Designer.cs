@@ -31,27 +31,27 @@ namespace G18_s_Airlines_CMPG223
         {
             this.FlightsTab = new System.Windows.Forms.TabControl();
             this.ViewFlights = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ComboBox_BookingNumber = new System.Windows.Forms.ComboBox();
             this.Btn_DeleteBooking = new System.Windows.Forms.Button();
+            this.BtnMakeBooking = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ComboBox_Flights = new System.Windows.Forms.ComboBox();
+            this.Btn_AddFlights = new System.Windows.Forms.Button();
+            this.Btn_DeleteFlights = new System.Windows.Forms.Button();
             this.DG_Bookings = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.BtnMakeBooking = new System.Windows.Forms.Button();
-            this.Btn_DeleteFlights = new System.Windows.Forms.Button();
-            this.Btn_AddFlights = new System.Windows.Forms.Button();
-            this.ComboBox_Flights = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DG_View = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.performanceCounter1 = new System.Diagnostics.PerformanceCounter();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ComboBox_BookingNumber = new System.Windows.Forms.ComboBox();
             this.FlightsTab.SuspendLayout();
             this.ViewFlights.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DG_Bookings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DG_View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.performanceCounter1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // FlightsTab
@@ -77,8 +77,29 @@ namespace G18_s_Airlines_CMPG223
             this.ViewFlights.Padding = new System.Windows.Forms.Padding(3);
             this.ViewFlights.Size = new System.Drawing.Size(2020, 914);
             this.ViewFlights.TabIndex = 0;
-            this.ViewFlights.Text = "tabPage1";
+            this.ViewFlights.Text = "View Flights";
             this.ViewFlights.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ComboBox_BookingNumber);
+            this.groupBox2.Controls.Add(this.Btn_DeleteBooking);
+            this.groupBox2.Controls.Add(this.BtnMakeBooking);
+            this.groupBox2.Location = new System.Drawing.Point(1367, 98);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(609, 291);
+            this.groupBox2.TabIndex = 11;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
+            // 
+            // ComboBox_BookingNumber
+            // 
+            this.ComboBox_BookingNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_BookingNumber.FormattingEnabled = true;
+            this.ComboBox_BookingNumber.Location = new System.Drawing.Point(6, 40);
+            this.ComboBox_BookingNumber.Name = "ComboBox_BookingNumber";
+            this.ComboBox_BookingNumber.Size = new System.Drawing.Size(149, 28);
+            this.ComboBox_BookingNumber.TabIndex = 7;
             // 
             // Btn_DeleteBooking
             // 
@@ -90,6 +111,61 @@ namespace G18_s_Airlines_CMPG223
             this.Btn_DeleteBooking.Text = "Delete Booking";
             this.Btn_DeleteBooking.UseVisualStyleBackColor = true;
             this.Btn_DeleteBooking.Click += new System.EventHandler(this.Btn_DeleteBooking_Click);
+            // 
+            // BtnMakeBooking
+            // 
+            this.BtnMakeBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnMakeBooking.Location = new System.Drawing.Point(6, 198);
+            this.BtnMakeBooking.Name = "BtnMakeBooking";
+            this.BtnMakeBooking.Size = new System.Drawing.Size(109, 53);
+            this.BtnMakeBooking.TabIndex = 3;
+            this.BtnMakeBooking.Text = "MakeBooking";
+            this.BtnMakeBooking.UseVisualStyleBackColor = true;
+            this.BtnMakeBooking.Click += new System.EventHandler(this.BtnMakeBooking_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ComboBox_Flights);
+            this.groupBox1.Controls.Add(this.Btn_AddFlights);
+            this.groupBox1.Controls.Add(this.Btn_DeleteFlights);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(16, 98);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(513, 282);
+            this.groupBox1.TabIndex = 10;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Flights:";
+            // 
+            // ComboBox_Flights
+            // 
+            this.ComboBox_Flights.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComboBox_Flights.FormattingEnabled = true;
+            this.ComboBox_Flights.Location = new System.Drawing.Point(6, 40);
+            this.ComboBox_Flights.Name = "ComboBox_Flights";
+            this.ComboBox_Flights.Size = new System.Drawing.Size(149, 28);
+            this.ComboBox_Flights.TabIndex = 2;
+            // 
+            // Btn_AddFlights
+            // 
+            this.Btn_AddFlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_AddFlights.Location = new System.Drawing.Point(6, 196);
+            this.Btn_AddFlights.Name = "Btn_AddFlights";
+            this.Btn_AddFlights.Size = new System.Drawing.Size(93, 54);
+            this.Btn_AddFlights.TabIndex = 5;
+            this.Btn_AddFlights.Text = "Add Flights";
+            this.Btn_AddFlights.UseVisualStyleBackColor = true;
+            this.Btn_AddFlights.Click += new System.EventHandler(this.Btn_AddFlights_Click);
+            // 
+            // Btn_DeleteFlights
+            // 
+            this.Btn_DeleteFlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_DeleteFlights.Location = new System.Drawing.Point(6, 95);
+            this.Btn_DeleteFlights.Name = "Btn_DeleteFlights";
+            this.Btn_DeleteFlights.Size = new System.Drawing.Size(93, 54);
+            this.Btn_DeleteFlights.TabIndex = 6;
+            this.Btn_DeleteFlights.Text = "Delete Flights";
+            this.Btn_DeleteFlights.UseVisualStyleBackColor = true;
+            this.Btn_DeleteFlights.Click += new System.EventHandler(this.Btn_DeleteFlights_Click);
             // 
             // DG_Bookings
             // 
@@ -108,48 +184,6 @@ namespace G18_s_Airlines_CMPG223
             this.label2.Size = new System.Drawing.Size(113, 20);
             this.label2.TabIndex = 7;
             this.label2.Text = "All Bookings:";
-            // 
-            // BtnMakeBooking
-            // 
-            this.BtnMakeBooking.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMakeBooking.Location = new System.Drawing.Point(6, 198);
-            this.BtnMakeBooking.Name = "BtnMakeBooking";
-            this.BtnMakeBooking.Size = new System.Drawing.Size(109, 53);
-            this.BtnMakeBooking.TabIndex = 3;
-            this.BtnMakeBooking.Text = "MakeBooking";
-            this.BtnMakeBooking.UseVisualStyleBackColor = true;
-            this.BtnMakeBooking.Click += new System.EventHandler(this.BtnMakeBooking_Click);
-            // 
-            // Btn_DeleteFlights
-            // 
-            this.Btn_DeleteFlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_DeleteFlights.Location = new System.Drawing.Point(6, 95);
-            this.Btn_DeleteFlights.Name = "Btn_DeleteFlights";
-            this.Btn_DeleteFlights.Size = new System.Drawing.Size(93, 54);
-            this.Btn_DeleteFlights.TabIndex = 6;
-            this.Btn_DeleteFlights.Text = "Delete Flights";
-            this.Btn_DeleteFlights.UseVisualStyleBackColor = true;
-            this.Btn_DeleteFlights.Click += new System.EventHandler(this.Btn_DeleteFlights_Click);
-            // 
-            // Btn_AddFlights
-            // 
-            this.Btn_AddFlights.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_AddFlights.Location = new System.Drawing.Point(6, 196);
-            this.Btn_AddFlights.Name = "Btn_AddFlights";
-            this.Btn_AddFlights.Size = new System.Drawing.Size(93, 54);
-            this.Btn_AddFlights.TabIndex = 5;
-            this.Btn_AddFlights.Text = "Add Flights";
-            this.Btn_AddFlights.UseVisualStyleBackColor = true;
-            this.Btn_AddFlights.Click += new System.EventHandler(this.Btn_AddFlights_Click);
-            // 
-            // ComboBox_Flights
-            // 
-            this.ComboBox_Flights.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBox_Flights.FormattingEnabled = true;
-            this.ComboBox_Flights.Location = new System.Drawing.Point(6, 40);
-            this.ComboBox_Flights.Name = "ComboBox_Flights";
-            this.ComboBox_Flights.Size = new System.Drawing.Size(149, 28);
-            this.ComboBox_Flights.TabIndex = 2;
             // 
             // label1
             // 
@@ -176,42 +210,8 @@ namespace G18_s_Airlines_CMPG223
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(2020, 914);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Admin/Management";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ComboBox_Flights);
-            this.groupBox1.Controls.Add(this.Btn_AddFlights);
-            this.groupBox1.Controls.Add(this.Btn_DeleteFlights);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(16, 98);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(513, 282);
-            this.groupBox1.TabIndex = 10;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Flights:";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.ComboBox_BookingNumber);
-            this.groupBox2.Controls.Add(this.Btn_DeleteBooking);
-            this.groupBox2.Controls.Add(this.BtnMakeBooking);
-            this.groupBox2.Location = new System.Drawing.Point(1367, 98);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(609, 291);
-            this.groupBox2.TabIndex = 11;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // ComboBox_BookingNumber
-            // 
-            this.ComboBox_BookingNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComboBox_BookingNumber.FormattingEnabled = true;
-            this.ComboBox_BookingNumber.Location = new System.Drawing.Point(6, 40);
-            this.ComboBox_BookingNumber.Name = "ComboBox_BookingNumber";
-            this.ComboBox_BookingNumber.Size = new System.Drawing.Size(149, 28);
-            this.ComboBox_BookingNumber.TabIndex = 7;
             // 
             // Form1
             // 
@@ -225,11 +225,11 @@ namespace G18_s_Airlines_CMPG223
             this.FlightsTab.ResumeLayout(false);
             this.ViewFlights.ResumeLayout(false);
             this.ViewFlights.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DG_Bookings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DG_View)).EndInit();
-            
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.performanceCounter1)).EndInit();
             this.ResumeLayout(false);
 
         }

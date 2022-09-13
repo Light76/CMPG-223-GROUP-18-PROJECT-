@@ -61,6 +61,7 @@ namespace G18_s_Airlines_CMPG223
             //Displaying Members In DataGrid View On Program Load:
             try
             {
+                Conn = new SqlConnection(Connstring);
                 Conn.Open();
 
                 Adapt = new SqlDataAdapter();
