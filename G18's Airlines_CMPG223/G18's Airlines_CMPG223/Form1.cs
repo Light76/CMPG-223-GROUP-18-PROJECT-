@@ -110,6 +110,35 @@ namespace G18_s_Airlines_CMPG223
             }
         }
 
+        // Function To Update ComboBox Booking Number:
+        private void Update_ComboBox_BookingNum()
+        {
+            //Updating With Booking_Number values:
+            try
+            {
+                Adapt = new SqlDataAdapter();
+                DS = new DataSet();
+
+                string SQL = "SELECT DISTINCT Booking_Number FROM BOOKING";
+
+                Comm = new SqlCommand(SQL, Conn);
+                Adapt.SelectCommand = Comm;
+                Adapt.Fill(DS, "BOOKING");
+
+                ComboBox_BookingNumber.DisplayMember = "Booking_Number";
+                ComboBox_BookingNumber.ValueMember = "Booking_Number";
+                ComboBox_BookingNumber.DataSource = DS.Tables["BOOKING"];
+
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
+        //------------------------------------------------------------------------------------------------------------------------------------------
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //Displaying Flights In DataGrid View On Program Load:
@@ -139,6 +168,9 @@ namespace G18_s_Airlines_CMPG223
             //Populating Combo_Box On Form Load:
             Update_ComboBox();
             Update_Bookings();
+            Update_ComboBox_BookingNum();
+
+
 
             //Displaying Bookings In DataGrid View On Program Load:
             try
@@ -232,8 +264,9 @@ namespace G18_s_Airlines_CMPG223
 
         //Bookings:
         private void BookingForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            
+        {   
+            //Updating Combobox when new bookings are added:
+            Update_ComboBox_BookingNum();
         }
 
         private void Btn_DeleteBooking_Click(object sender, EventArgs e)
@@ -256,6 +289,7 @@ namespace G18_s_Airlines_CMPG223
                 Conn.Close();
 
                 Update_Bookings();
+                Update_ComboBox_BookingNum();
                 
                 MessageBox.Show("BOOKING Deleted");
             }
