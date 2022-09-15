@@ -25,6 +25,8 @@ namespace G18_s_Airlines_CMPG223
         public Form1()
         {
             InitializeComponent();
+
+            
         }
 
         //Function To Update DataBase: FOr FLIGHTS:
@@ -311,6 +313,8 @@ namespace G18_s_Airlines_CMPG223
 
             username = Txt_UserName.Text;
             user_password = Txt_Password.Text;
+
+            
 
             try
             {

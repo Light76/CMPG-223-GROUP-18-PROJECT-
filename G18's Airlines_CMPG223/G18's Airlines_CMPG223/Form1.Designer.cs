@@ -258,6 +258,7 @@ namespace G18_s_Airlines_CMPG223
             this.Txt_Password.Name = "Txt_Password";
             this.Txt_Password.Size = new System.Drawing.Size(253, 26);
             this.Txt_Password.TabIndex = 4;
+            this.Txt_Password.UseSystemPasswordChar = true;
             // 
             // Txt_UserName
             // 
